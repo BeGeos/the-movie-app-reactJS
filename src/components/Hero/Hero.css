@@ -1,0 +1,41 @@
+.hero {
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: fadeIn 1s linear forwards;
+}
+
+.hero__container {
+  width: min(90%, var(--sz-desktop));
+  margin: 0 auto;
+  height: 60vh;
+}
+
+.hero__content {
+  min-height: 100%;
+  width: min(100%, var(--sz-mobile));
+  color: var(--clr-clear-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 3rem;
+  z-index: 10;
+}
+
+.hero__content h2 {
+  font-size: clamp(2vw, 4rem, 6rem);
+}
+
+.hero__content p {
+  font-size: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

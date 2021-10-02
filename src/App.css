@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  /* Colors */
+  --clr-main-text: black;
+  --clr-clear-text: white;
+  --clr-header-text: white;
+  --clr-bg: white;
+  --clr-accent: rgb(121, 70, 138);
+  --clr-contrast: #2d2d2d;
+  --clr-light-contrast: #5b5b5b;
+
+  /* Fonts */
+  --ft-xlarge: 3rem;
+  --ft-large: 2.5rem;
+  --ft-medium: 2rem;
+  --ft-norm-medium: 1.5rem;
+  --ft-normal: 1rem;
+  --ft-small: 0.85rem;
+
+  /* Screen Size breakpoints */
+  --sz-desktop: 71.25rem;
+  --sz-tablet: 45rem;
+  --sz-mobile: 33.75rem;
+
+  /* Transitions */
+  --animation-speed: 500ms;
+  --hover-speed: 250ms;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html,
+body {
+  font-size: 16px;
+  min-height: 100%;
+  font-family: "Heebo", sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.load-more {
+  margin: 1rem auto;
+  width: max-content;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.load-more button {
+  padding: 0.75em 1em;
+  background-color: var(--clr-contrast);
+  color: var(--clr-clear-text);
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
 }

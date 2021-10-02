@@ -1,0 +1,31 @@
+.search-bar {
+  background-color: var(--clr-contrast);
+  min-height: 3rem;
+  padding: 0.85rem 0;
+}
+
+.search-bar__container {
+  width: min(90%, var(--sz-desktop));
+  background-color: var(--clr-light-contrast);
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+}
+
+.search-bar input {
+  flex: 1;
+  background-color: transparent;
+  font-size: 1rem;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  color: var(--clr-clear-text);
+}
+
+.search-bar button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transform: scale(1.4);
+}

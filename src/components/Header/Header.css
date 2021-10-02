@@ -1,0 +1,22 @@
+header {
+  min-width: 100%;
+  background-color: var(--clr-contrast);
+  color: var(--clr-header-text);
+}
+
+.navbar {
+  width: min(90%, var(--sz-desktop));
+  min-height: 3.5rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h2 {
+  margin: 0;
+}
+
+.navbar img {
+  height: 2rem;
+}
