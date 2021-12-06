@@ -2,37 +2,6 @@ import React from "react";
 import "./MovieGrid.css";
 import MovieCard from "../MovieCard";
 
-// Images
-// import MovieImage from "../../images/jamesBond.jpg";
-
-// Mock movie data
-// const movieData = [
-//   {
-//     id: 1,
-//     title: "James Bond",
-//     imageURL: MovieImage,
-//     rating: 5,
-//   },
-//   {
-//     id: 2,
-//     title: "Jumanji",
-//     imageURL: MovieImage,
-//     rating: 5,
-//   },
-//   {
-//     id: 3,
-//     title: "Star Wars",
-//     imageURL: MovieImage,
-//     rating: 1,
-//   },
-//   {
-//     id: 4,
-//     title: "Indiana Jones",
-//     imageURL: MovieImage,
-//     rating: 5,
-//   },
-// ];
-
 import NoImage from "../../images/default-movie.jpeg";
 
 const POSTER_PATH_URL = "https://image.tmdb.org/t/p/w500";
@@ -45,7 +14,14 @@ const Moviegrid = ({ movies, heading }) => {
     const imagePath = movie.poster_path
       ? `${POSTER_PATH_URL}${movie.poster_path}`
       : NoImage;
-    return <MovieCard key={movie.id} cardImage={`${imagePath}`} />;
+    return (
+      <MovieCard
+        key={movie.id}
+        movieId={movie.id}
+        cardImage={`${imagePath}`}
+        clickable={true}
+      />
+    );
   });
 
   return (

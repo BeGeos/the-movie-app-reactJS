@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 
 // Components
-import Header from "../Header";
 import Hero from "../Hero";
 import SearchBar from "../SearchBar";
 import Moviegrid from "../Moviegrid";
 
 // Global Variables
-const path = require("path");
+// const path = require("path");
 require("dotenv").config();
-const API_KEY = process.env.API_KEY;
+const API_KEY = process.env.API_KEY || "49789e1e9f7528dbf2838a7d663c7819";
 const POPULAR_MOVIE_URL = "https://api.themoviedb.org/3/movie/popular";
 const SEARCH_MOVIE_URL = "https://api.themoviedb.org/3/search/movie";
 
@@ -65,7 +64,6 @@ const Home = () => {
 
   return (
     <div>
-      <Header />
       {!searchValue && <Hero hero={movies[0]} />}
       <SearchBar handleChange={setSearchValue} />
       <Moviegrid

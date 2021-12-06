@@ -64,3 +64,18 @@ a:visited {
   border-radius: 0.3rem;
   cursor: pointer;
 }
+
+.movie__details-bg {
+  min-height: calc(100vh - 3.5rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.movie__details-bg img {
+  min-height: 100%;
+  transform: scale(1.1);
+  position: absolute;
+  inset: 0;
+  filter: blur(5px);
+  z-index: -1;
+}
