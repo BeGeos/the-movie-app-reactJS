@@ -11,6 +11,12 @@
   color: var(--clr-clear-text);
 }
 
+.movie__details-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
 .movie__details-description {
   flex: 1;
 }
@@ -20,7 +26,27 @@
   text-align: right;
 }
 
-@media (max-width: 720px) {
+.movie__credits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.cast__card {
+  border-radius: 1rem;
+  overflow: hidden;
+  font-size: 0.85rem;
+}
+
+.cast__card .cast__profile-pic {
+  max-width: 100%;
+}
+
+.cast__details {
+  padding: 10px;
+}
+
+@media (max-width: 780px) {
   .movie__details {
     flex-direction: column;
     align-items: center;

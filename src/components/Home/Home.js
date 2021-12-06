@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Hero from "../Hero";
 import SearchBar from "../SearchBar";
 import Moviegrid from "../Moviegrid";
+import Spinner from "../Spinner/Spinner";
 
 // Global Variables
 // const path = require("path");
@@ -61,6 +62,10 @@ const Home = () => {
     fetchMovies(searchValue);
     // console.log(movies);
   }, [searchValue]);
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <div>

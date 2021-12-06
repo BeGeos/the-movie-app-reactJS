@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
 // Components
-import MovieCard from "./MovieCard";
+// import MovieCard from "./MovieCard";
 import MovieDetails from "./MovieDetails/MovieDetails";
 import Spinner from "./Spinner/Spinner";
 // No Image
@@ -24,16 +25,31 @@ async function fetchMovieDetails(id) {
   }
 }
 
-// 550988 -- Free Guy
+async function fetchMovieCredits(id) {
+  const MOVIE_CREDITS_URL =
+    MOVIE_DETAIL_URL + `${id}/credits?api_key=${API_KEY}`;
+  try {
+    let response = await fetch(MOVIE_CREDITS_URL);
+    let credits = await response.json();
+    return credits;
+  } catch (err) {
+    console.error(err);
+    return err;
+  }
+}
 
 const Movie = () => {
   const [details, setDetails] = useState({});
   const [loading, setLoading] = useState(true);
+  const [credits, setCredits] = useState({});
+  const { movieId } = useParams();
 
   async function getDetails(id) {
     try {
-      let data = await fetchMovieDetails(id);
-      setDetails(data);
+      let movieData = await fetchMovieDetails(id);
+      let movieCredits = await fetchMovieCredits(id);
+      setDetails(movieData);
+      setCredits(movieCredits);
       setLoading(false);
     } catch (err) {
       console.error(err);
@@ -41,9 +57,8 @@ const Movie = () => {
   }
 
   useEffect(() => {
-    getDetails(550988);
+    getDetails(movieId);
   }, []);
-
   // Show spinner when loading
   if (loading) {
     return <Spinner />;
@@ -53,12 +68,18 @@ const Movie = () => {
       <img
         src={`${BACKDROP_API_URL}${details.backdrop_path}`}
         alt="movie-background"
+        className="movie__background"
       />
       <MovieDetails
-        cardImage={`${POSTER_API_URL}${details.poster_path}`}
+        cardImage={
+          details.poster_path
+            ? `${POSTER_API_URL}${details.poster_path}`
+            : NoImage
+        }
         movieTitle={details.original_title}
         movieDescription={details.overview}
         movieReleaseDate={details.release_date}
+        credits={credits}
       />
     </div>
   );

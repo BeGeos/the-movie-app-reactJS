@@ -7,8 +7,6 @@ import NoImage from "../../images/default-movie.jpeg";
 const POSTER_PATH_URL = "https://image.tmdb.org/t/p/w500";
 
 const Moviegrid = ({ movies, heading }) => {
-  // console.log(movies);
-
   const Movies = movies.map((movie) => {
     // console.log("I am a movie" + movie);
     const imagePath = movie.poster_path

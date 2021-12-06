@@ -25,6 +25,7 @@
   animation: fadeInMoveUp var(--animation-speed) linear forwards;
   min-height: 300px;
   min-width: 200px;
+  flex: 1;
 }
 
 .movie__card a {
